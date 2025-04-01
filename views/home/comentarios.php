@@ -1,20 +1,19 @@
 <?php
 require_once 'db_config.php';
 
-// Verificar si se recibió la bandera por GET
+
 $flag = $_GET['flag'] ?? null;
 if (!$flag) {
     header("Location: home.php");
     exit();
 }
 
-// Procesar el formulario
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'] ?? '';
     $comentario = $_POST['comentario'] ?? '';
     $anuncio = $_POST['anuncio'] ?? '';
 
-    // Validar: al menos comentario o anuncio
     if (!empty($comentario) || !empty($anuncio)) {
         $stmt = $pdo->prepare("
             INSERT INTO comentarios (flag, username, comentario, anuncio)
@@ -37,23 +36,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- Se incluye la viewport para que responda correctamente en dispositivos -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comentario para la bandera <?php echo htmlspecialchars($flag); ?></title>
+    <title>Comentarios</title>
     <link rel="stylesheet" href="/public/assets/css/styles.css">
 </head>
 <body class="flex items-center justify-center min-h-screen bg-blue-500">
-    <!-- Contenedor central que se adapta a distintos tamaños -->
+
     <div class="bg-white rounded-lg shadow-lg p-4 max-w-lg w-full space-y-4">
         <h1 class="text-2xl font-bold text-center text-gray-800">
-            Comentario para la bandera: <?php echo strtoupper(htmlspecialchars($flag)); ?>
+            Deja tu comentario
         </h1>
         <?php if (isset($error)): ?>
             <p class="text-red-500 text-center"><?php echo $error; ?></p>
         <?php endif; ?>
-        <!-- Formulario responsive -->
+
         <form action="comentarios.php?flag=<?php echo htmlspecialchars($flag); ?>" method="POST" class="space-y-4 flex flex-col">
-            <!-- Campo de nombre en línea en pantallas pequeñas a medias -->
+
             <div class="flex flex-col sm:flex-row sm:items-center gap-2">
                 <label for="username" class="block text-sm font-medium text-gray-600">Nombre (opcional)</label>
                 <input type="text" name="username" id="username" placeholder="Tu nombre"
@@ -80,7 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a href="home.php" class="text-blue-500 hover:text-blue-700 text-sm">
                 Volver a la página principal
             </a>
-            <a href="views/home/comentarios.php?flag=mx">Ir a comentarios</a>
         </div>
     </div>
 </body>

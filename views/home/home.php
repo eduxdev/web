@@ -1,6 +1,6 @@
 <?php
-// index.php
-require_once 'db_config.php';  // Por si necesitas la conexión
+
+require_once 'db_config.php';  
 ?>
 <!DOCTYPE html>
 <html lang="es">
