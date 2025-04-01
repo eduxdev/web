@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p class="text-red-500 text-center"><?php echo $error; ?></p>
         <?php endif; ?>
         <!-- Formulario responsive -->
-        <form action="comentario.php?flag=<?php echo htmlspecialchars($flag); ?>" method="POST" class="space-y-4 flex flex-col">
+        <form action="comentarios.php?flag=<?php echo htmlspecialchars($flag); ?>" method="POST" class="space-y-4 flex flex-col">
             <!-- Campo de nombre en línea en pantallas pequeñas a medias -->
             <div class="flex flex-col sm:flex-row sm:items-center gap-2">
                 <label for="username" class="block text-sm font-medium text-gray-600">Nombre (opcional)</label>
@@ -80,6 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a href="home.php" class="text-blue-500 hover:text-blue-700 text-sm">
                 Volver a la página principal
             </a>
+            <a href="views/home/comentarios.php?flag=mx">Ir a comentarios</a>
         </div>
     </div>
 </body>
