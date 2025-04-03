@@ -1,0 +1,11 @@
+{
+    "require": {
+        "stripe/stripe-php": "^17.0",
+        "php": ">=7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "YourNamespace\\": "src/"
+        }
+    }
+}
