@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NetBandera</title>
@@ -198,7 +198,7 @@
             </a>
         </div>
 
-        <<!-- LOTE3 -->
+        <!-- LOTE3 -->
         <div class="flags-container">
             <a href="comentarios.php?flag=al" class="flex-shrink-0">
                 <img src="https://flagcdn.com/h20/al.png" alt="Albania">

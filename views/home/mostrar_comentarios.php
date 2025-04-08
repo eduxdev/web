@@ -1,8 +1,8 @@
 <?php
 require_once 'db_config.php';
 
-// Obtener comentarios pagados
-$stmtPaid = $pdo->query("SELECT * FROM comentarios_pagados ORDER BY fecha DESC");
+// Obtener comentarios pagados solo del último mes
+$stmtPaid = $pdo->query("SELECT * FROM comentarios_pagados WHERE fecha >= DATE_SUB(NOW(), INTERVAL 1 MONTH) ORDER BY fecha DESC");
 $comentarios_pagados = $stmtPaid->fetchAll(PDO::FETCH_ASSOC);
 
 // Obtener comentarios normales
@@ -38,7 +38,9 @@ $comentarios_normales = $stmtNormal->fetchAll(PDO::FETCH_ASSOC);
                                 <?php if (!empty($coment['media'])): ?>
                                     <p><strong>Medio:</strong>
                                         <?php if ($coment['media_type'] === 'imagen'): ?>
-                                            <img src="<?php echo htmlspecialchars($coment['media']); ?>" alt="Imagen" style="max-width:200px;">
+                                            <img src="<?php echo htmlspecialchars($coment['media']); ?>" alt="Imagen"
+                                                 style="max-width:200px; cursor:pointer;"
+                                                 onclick="openModal(this.src)">
                                         <?php elseif ($coment['media_type'] === 'video'): ?>
                                             <video width="320" height="240" controls>
                                                 <source src="<?php echo htmlspecialchars($coment['media']); ?>">
@@ -71,5 +73,24 @@ $comentarios_normales = $stmtNormal->fetchAll(PDO::FETCH_ASSOC);
             <p class="no-comentarios">No hay comentarios aún.</p>
         <?php endif; ?>
     </div>
+
+    <!-- Modal -->
+    <div id="image-modal" class="modal" onclick="closeModal()">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img-modal-content">
+    </div>
+
+    <script>
+        function openModal(src) {
+            var modal = document.getElementById('image-modal');
+            var modalImg = document.getElementById('img-modal-content');
+            modal.style.display = "block";
+            modalImg.src = src;
+        }
+        function closeModal() {
+            var modal = document.getElementById('image-modal');
+            modal.style.display = "none";
+        }
+    </script>
 </body>
 </html>

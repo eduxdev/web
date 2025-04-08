@@ -12,9 +12,9 @@
     <h1 class="text-3xl font-bold text-[#FFD700]">NetBandera</h1>
     <nav>
         <!-- Botón para comentarios con nuevo estilo -->
-        <a href="mostrar_comentarios.php" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+        <button onclick="location.href='mostrar_comentarios.php'" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-md transition duration-300">
             Comentarios
-        </a>
+        </button>
     </nav>
 </header>
 </body>

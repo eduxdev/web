@@ -114,3 +114,32 @@
             color: #fff;
             font-weight: 500;
         }
+
+ 
+        /* Estilos para el modal de imagen */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+        .modal-content {
+            margin: 5% auto;
+            display: block;
+            max-width: 80%;
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    

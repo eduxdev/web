@@ -66,20 +66,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <textarea name="anuncio" id="anuncio" rows="2" placeholder="Escribe tu anuncio..."
                           class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-200"></textarea>
             </div>
-            <!-- Botón de Enviar -->
-            <div class="flex justify-center">
-                <button type="submit"
-                        class="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-                    Enviar
-                </button>
-            </div>
-            
-        </form>
-        <form method="post" action="comentarios_pagados.php">
-            <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                Quieres dejar un comentario Pagado?
-            </button>
-        </form>
+
+            <div class="flex justify-center space-x-4">
+    <!-- Formulario principal para enviar comentario -->
+    <form method="post" action="comentarios.php?flag=<?php echo htmlspecialchars($flag); ?>">
+        <button type="submit"
+                class="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
+            Enviar
+        </button>
+    </form>
+
+    <!-- Botón de Comentario Pagado (Formulario separado, sin validación) -->
+    <form action="comentarios_pagados.php" method="get">
+        <button type="submit"
+                class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105">
+            ¿Quieres dejar un comentario pagado?
+        </button>
+    </form>
+</div>
         <!-- Enlace para volver -->
         <div class="mt-6 text-center">
             <a href="home.php" class="text-blue-600 hover:text-blue-800 font-medium transition duration-200">
