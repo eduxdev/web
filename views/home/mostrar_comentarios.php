@@ -1,9 +1,9 @@
 <?php
 require_once 'db_config.php';
 
-// Obtener comentarios pagados solo del último mes
-$stmtPaid = $pdo->query("SELECT * FROM comentarios_pagados WHERE fecha >= DATE_SUB(NOW(), INTERVAL 1 MONTH) ORDER BY fecha DESC");
-$comentarios_pagados = $stmtPaid->fetchAll(PDO::FETCH_ASSOC);
+    // Obtener comentarios pagados solo del último mes
+    $stmtPaid = $pdo->query("SELECT * FROM comentarios_pagados WHERE fecha >= DATE_SUB(NOW(), INTERVAL 1 MONTH) ORDER BY fecha DESC");
+    $comentarios_pagados = $stmtPaid->fetchAll(PDO::FETCH_ASSOC);
 
 // Obtener comentarios normales
 $stmtNormal = $pdo->query("SELECT * FROM comentarios ORDER BY fecha DESC");

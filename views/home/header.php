@@ -10,12 +10,7 @@
 <body>
 <header class="flex justify-between p-4 bg-gray-900">
     <h1 class="text-3xl font-bold text-[#FFD700]">NetBandera</h1>
-    <nav>
-        <!-- Botón para comentarios con nuevo estilo -->
-        <button onclick="location.href='mostrar_comentarios.php'" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-md transition duration-300">
-            Comentarios
-        </button>
-    </nav>
+    
 </header>
 </body>
 </html>
