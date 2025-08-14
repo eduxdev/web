@@ -1,0 +1,29 @@
+# Archivos de entorno y configuración
+.env
+.env.local
+.env.production
+
+# Directorios de dependencias
+/vendor/
+/node_modules/
+
+# Archivos de configuración sensibles
+db_config_private.php
+
+# Archivos de caché y logs
+*.log
+/cache/
+/logs/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de subida temporales
+/uploads/temp/

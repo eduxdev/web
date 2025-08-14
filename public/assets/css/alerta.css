@@ -1,0 +1,79 @@
+
+        /* Estilos para el overlay de verificación de edad */
+        #ageGate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9); /* Fondo oscuro */
+            visibility: hidden; /* Oculto inicialmente */
+            opacity: 0; /* Transparente inicialmente */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: visibility 0s, opacity 0.3s ease-in-out; /* Transición suave */
+        }
+
+        #ageGate.visible {
+            visibility: visible; /* Mostrar cuando sea necesario */
+            opacity: 1; /* Hacer visible */
+        }
+
+        .age-overlay {
+            background: #111;
+            border: 2px solid #e50914; /* Borde rojo */
+            box-shadow: 0 0 20px rgba(229, 9, 20, 0.8); /* Sombra roja */
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 400px;
+            color: #fff;
+        }
+
+        .overlay-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #e50914; /* Rojo para resaltar */
+        }
+
+        .overlay-text {
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        .overlay-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .overlay-buttons button {
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-ingresar {
+            background: #e50914; /* Rojo brillante */
+            color: #fff;
+        }
+
+        .btn-ingresar:hover {
+            background: #bf0811; /* Rojo más oscuro */
+        }
+
+        .btn-salir {
+            background: #333; /* Fondo gris oscuro */
+            color: #fff;
+        }
+
+        .btn-salir:hover {
+            background: #555; /* Gris más claro */
+        }
